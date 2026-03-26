@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShiftLog Notifications</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <div>
+          <p class="eyebrow">ShiftLog Ops</p>
+          <h1>Notifications Control Room</h1>
+          <p class="subhead">Live operational alerts and status updates from your shift logs.</p>
+        </div>
+        <div class="status-pill" id="apiStatus">Checking API...</div>
+      </header>
+
+      <section class="controls">
+        <div class="control-card">
+          <label for="apiBase">API Base URL</label>
+          <div class="inline">
+            <input id="apiBase" type="text" placeholder="http://localhost:5000" />
+            <button id="saveApi">Save</button>
+          </div>
+          <p class="hint">Use your backend URL if it is hosted elsewhere.</p>
+        </div>
+        <div class="control-card">
+          <label>Filters</label>
+          <div class="inline">
+            <button class="toggle active" id="filterAll">All</button>
+            <button class="toggle" id="filterUnread">Unread</button>
+          </div>
+          <div class="inline">
+            <button id="refreshNow">Refresh</button>
+            <button id="markAll">Mark all read</button>
+          </div>
+          <p class="hint" id="lastUpdated">Last updated: --</p>
+        </div>
+      </section>
+
+      <section class="board">
+        <div class="board-head">
+          <h2>Live Feed</h2>
+          <span id="summary">0 notifications</span>
+        </div>
+        <div id="error" class="error hidden"></div>
+        <div id="list" class="list"></div>
+        <div id="empty" class="empty hidden">No notifications to show.</div>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
