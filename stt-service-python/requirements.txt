@@ -1,3 +1,5 @@
 fastapi
-uvicorn
-parakeet
+uvicorn[standard]
+python-multipart
+onnx-asr[cpu,hub]
+imageio-ffmpeg

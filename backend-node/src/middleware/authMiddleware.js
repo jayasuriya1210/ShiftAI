@@ -1,7 +1,7 @@
 // backend-node/src/middleware/authMiddleware.js
 
 const jwt = require("jsonwebtoken");
-const jwtSecret = process.env.JWT_SECRET;
+const jwtSecret = process.env.JWT_SECRET || "dev_secret_change_me";
 
 const authMiddleware = (req, res, next) => {
   const token = req.headers.authorization?.split(" ")[1];
