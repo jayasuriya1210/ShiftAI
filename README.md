@@ -1,13 +1,13 @@
-## ShiftAI
+## EchoLog
 
 AI-powered, local-first shift handover platform for industrial teams.  
-ShiftAI converts voice logs to structured shift records, stores them in MongoDB, and provides live operational visibility through dashboards.
+EchoLog converts voice logs to structured shift records, stores them in MongoDB, and provides live operational visibility through dashboards.
 
 ---
 
 ## Product Overview
 
-ShiftAI is built as a SaaS-style product architecture (modular frontend + API + ML service), but deploys fully on local infrastructure for data privacy.
+EchoLog is built as a SaaS-style product architecture (modular frontend + API + ML service), but deploys fully on local infrastructure for data privacy.
 
 ### Core Outcomes
 - Capture shift handovers by voice or uploaded audio
@@ -27,7 +27,7 @@ ShiftAI is built as a SaaS-style product architecture (modular frontend + API + 
 | STT Service | `stt-service-python/` | `8000` | Offline speech-to-text inference API |
 | Notifications UI | `notifications-dashboard/` | `8090` | Dedicated notifications dashboard |
 
-The frontend was previously outside git (`C:\ShiftAI\shift-ai-main`).  
+The frontend was previously outside git (`C:\EchoLog\shift-ai-main`).  
 It is now included in this repository under `frontend/`.
 
 ---
@@ -51,7 +51,7 @@ It is now included in this repository under `frontend/`.
 
 ### 1) Backend API
 ```powershell
-cd C:\ShiftAI\Voice_2_text\backend-node
+cd C:\EchoLog\Voice_2_text\backend-node
 npm install
 copy .env.example .env
 run-backend.cmd
@@ -59,7 +59,7 @@ run-backend.cmd
 
 ### 2) STT Service
 ```powershell
-cd C:\ShiftAI\Voice_2_text\stt-service-python
+cd C:\EchoLog\Voice_2_text\stt-service-python
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
@@ -68,14 +68,14 @@ python -m uvicorn app:app --host 127.0.0.1 --port 8000
 
 ### 3) Main Frontend
 ```powershell
-cd C:\ShiftAI\Voice_2_text\frontend
+cd C:\EchoLog\Voice_2_text\frontend
 npm install
 run-frontend.cmd
 ```
 
 ### 4) Notifications Dashboard (Optional)
 ```powershell
-cd C:\ShiftAI\Voice_2_text\notifications-dashboard
+cd C:\EchoLog\Voice_2_text\notifications-dashboard
 run-notifications.cmd
 ```
 
